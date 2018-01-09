@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import static android.view.Menu.NONE;
@@ -24,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         menu.add(1,1,1,"ADD");  //沒用的groupId可寫NONE
         menu.add(1,1,0,"EDIT");
         */
-        getMenuInflater().inflate(R.menu.mymenu,menu);  //方法3，自製menu
+        MenuInflater m=new MenuInflater(this);  //方法3，自製menu
+        m.inflate(R.menu.mymenu,menu);
+        //getMenuInflater().inflate(R.menu.mymenu,menu);  //上方兩行寫法的簡寫
         return  super.onCreateOptionsMenu(menu);
     }
 
